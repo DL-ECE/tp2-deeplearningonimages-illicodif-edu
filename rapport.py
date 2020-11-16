@@ -576,19 +576,19 @@ if __name__ == "__main__" :
   fmnist_val = DataLoader(fmnist_val_data, batch_size=32, num_workers=4,  pin_memory=True)
 
 """Display the 10 image from train set and 10 images from validation set, print their ground truth"""
+if __name__ == "__main__":
+    def display_10_images(dataset):
+        # YOUR CODE HERE 
+        for i in range(0,10):
+          image, target = dataset[i]
+          plot_one_tensor(image[0])
+          plt.show()
+          print(target)
 
-def display_10_images(dataset):
-    # YOUR CODE HERE 
-    for i in range(0,10):
-      image, target = dataset[i]
-      plot_one_tensor(image[0])
-      plt.show()
-      print(target)
-
-print("Train data : ")
-display_10_images(fmnist_train_data)
-print("Val data : ")
-display_10_images(fmnist_val_data)
+    print("Train data : ")
+    display_10_images(fmnist_train_data)
+    print("Val data : ")
+    display_10_images(fmnist_val_data)
 
 """What is the shape of each images
 How many images do we have
